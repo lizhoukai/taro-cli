@@ -1,0 +1,6 @@
+**/*.md
+**/*.svg
+**/*.less
+package.json
+app/
+config/

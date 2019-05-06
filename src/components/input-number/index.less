@@ -1,0 +1,58 @@
+@import url('../style/theme.less');
+
+@input-number-btn-padding: 12px;
+@input-number-btn-padding-lg: 20px;
+@input-number-size-min: 80px;
+@input-number-size-min-lg: 120px;
+
+.orc-input-number {
+  display: inline-flex;
+  align-items: center;
+  font-size: @font-size-base;
+  background-color: @color-white;
+  overflow: hidden;
+  &__btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0;
+    overflow: hidden;
+    background-color: @color-success;
+    width: 32px;
+    height: 32px;
+  }
+
+  &__input {
+    display: inline-block;
+    width: 20px;
+    height: 32px;
+    border-radius: 0;
+    font-size: @font-size-base;
+    text-align: center;
+  }
+
+  &--disabled {
+    color: @color-white;
+    background-color: @color-border-base;
+
+    &:active {
+      background-color: inherit;
+    }
+  }
+  &__btn {
+    padding: 20px;
+  }
+
+  &--lg {
+    .orc-input-number__btn {
+      padding: @input-number-btn-padding-lg;
+      font-size: @font-size-xl;
+    }
+
+    .orc-input-number__input {
+      padding: 10px;
+      font-size: @font-size-xl;
+    }
+  }
+}

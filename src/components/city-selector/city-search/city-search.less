@@ -1,0 +1,42 @@
+.city-search {
+  padding: 0 24px;
+}
+.search-inp {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 94px;
+  &::before {
+    position: absolute;
+    top: 30px;
+    left: 25px;
+    display: block;
+    font-family: 'iconfont' !important;
+    font-size: 35px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: '\e62c';
+  }
+  .inp-panel {
+    flex: 1;
+    background: #eee;
+    border-radius: 30px;
+    padding: 10px 0 10px 70px;
+  }
+  .btn-cancel {
+    color: #333851;
+    padding: 0 24px;
+  }
+}
+.search-result {
+  .list-label {
+    display: flex;
+    align-items: center;
+    min-height: 90px;
+    color: #222;
+    font-size: 28px;
+    border-bottom: 1px solid #eee;
+  }
+}

@@ -1,0 +1,39 @@
+@import url('./comm.less');
+@import url('./font.less');
+@import url('./cell.less');
+page {
+  font-size: 30px;
+  height: 100%;
+  button {
+    border-radius: 0;
+    &::after {
+      border: none;
+    }
+  }
+}
+view,
+scroll-view {
+  box-sizing: border-box;
+  word-break: break-all;
+}
+image {
+  // vertical-align: top;
+}
+
+swiper{
+  height: 320px;
+}
+
+radio,
+checkbox {
+  transform: scale(0.8);
+}
+input {
+  width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

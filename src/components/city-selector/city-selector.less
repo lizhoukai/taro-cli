@@ -1,0 +1,93 @@
+.letter-item {
+  position: fixed;
+  top: 15%;
+  right: 0;
+  width: 60px;
+  height: 70%;
+  text-align: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+  .item-list {
+    font-size: 26px;
+    color: #333851;
+  }
+}
+.city-item {
+  background-color: #fff;
+  .item-title {
+    background: #eee;
+    padding: 15px 0 15px 24px;
+    color: #999;
+    font-size: 26px;
+  }
+  .item-list {
+    padding: 0 24px;
+  }
+  .list-label {
+    display: flex;
+    align-items: center;
+    min-height: 90px;
+    color: #222;
+    font-size: 28px;
+    border-bottom: 1px solid #eee;
+  }
+}
+
+.hot-city {
+  padding: 34px 0 0 34px;
+  .hot-title {
+    font-size: 30px;
+    padding-bottom: 20px;
+  }
+  .hot-list {
+    overflow: hidden;
+  }
+  .list-item {
+    display: block;
+    font-size: 28px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    padding: 8px 20px;
+    float: left;
+    color: #222;
+    margin: 0 20px 24px 0;
+  }
+}
+.scroll-title {
+  line-height: 1;
+  font-size: 30px;
+  padding: 24px 0 24px 24px;
+  border-top: 1px solid #e5e5e5;
+}
+.search-inp {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 94px;
+  padding: 0 24px;
+  &::before {
+    position: absolute;
+    top: 30px;
+    left: 50px;
+    display: block;
+    font-family: 'iconfont' !important;
+    font-size: 35px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: '\e62c';
+  }
+  .inp-panel {
+    flex: 1;
+    background: #eee;
+    border-radius: 30px;
+    padding: 10px 0 10px 70px;
+  }
+  .btn-cancel {
+    color: #333851;
+    padding: 0 24px;
+  }
+}

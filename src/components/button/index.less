@@ -1,0 +1,66 @@
+@import url('../style/theme.less');
+.orc-btn {
+  display: inline-block;
+}
+.orc-btn--small {
+  font-size: @font-size-sm;
+  padding: 8px 16px;
+}
+.orc-btn--normal {
+  font-size: @font-size-base;
+  padding: 6px 28px;
+}
+.orc-btn--large {
+  width: 100%;
+  font-size: @font-size-xl;
+  padding: 24px;
+  text-align: center;
+}
+
+.orc-btn--default {
+  color: @color-text-title;
+  border: 1px solid @color-border-base;
+  background: @color-white;
+  &.orc-btn--ghost {
+    color: @color-border-base;
+    border: 1px solid @color-border-base;
+    background: @color-white;
+  }
+}
+
+.orc-btn--success {
+  color: @color-white;
+  background: @color-success;
+  &.orc-btn--ghost {
+    color: @color-success;
+    border: 1px solid @color-success;
+    background: @color-white;
+  }
+}
+
+.orc-btn--warning {
+  color: @color-white;
+  background: @color-warning;
+  &.orc-btn--ghost {
+    color: @color-warning;
+    border: 1px solid @color-warning;
+    background: @color-white;
+  }
+}
+.orc-btn--error {
+  color: @color-white;
+  background: @color-error;
+  &.orc-btn--ghost {
+    color: @color-error;
+    border: 1px solid @color-error;
+    background: @color-white;
+  }
+}
+
+.orc-btn--disabled {
+  opacity: 0.3;
+}
+
+.orc-btn--circle {
+  border-radius: 36px;
+}

@@ -1,0 +1,37 @@
+.orc-tabbar {
+  position: relative;
+  display: flex;
+  width: 100%;
+  background: #fff;
+  z-index: 999;
+  .tab-item {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+  }
+  &--small {
+    padding: 13px 0;
+    .pic {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 4px;
+    }
+    .label {
+      font-size: 20px;
+      color: #222;
+    }
+  }
+  &--normal {
+    padding: 16px 0;
+    .pic {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 8px;
+    }
+    .label {
+      font-size: 24px;
+      color: #222;
+    }
+  }
+}

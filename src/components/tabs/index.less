@@ -1,0 +1,71 @@
+@import url('../style/theme.less');
+
+.orc-tabs {
+  position: relative;
+  overflow: hidden;
+  &__item {
+    position: relative;
+    flex: 1;
+    font-size: 30px;
+    color: @color-text-base;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-align: center;
+    &--active .orc-tabs__text {
+      color: @color-success;
+      &::after {
+        transform: scaleX(1);
+      }
+    }
+  }
+  &__text {
+    position: relative;
+    display: inline-block;
+    padding: 24px 16px;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      border: 1px solid @color-success;
+      transform: scaleX(0);
+      transition: all 0.15s;
+    }
+  }
+
+  &__header {
+    position: relative;
+    display: flex;
+    width: 100%;
+    box-sizing: border-box;
+    white-space: nowrap;
+    background-color: @color-white;
+    overflow: -moz-scrollbars-none;
+    z-index: 2;
+    &--scroll {
+      overflow-x: scroll;
+      -webkit-overflow-scrolling: touch;
+      white-space: nowrap;
+
+      .orc-tabs__item {
+        display: inline-block;
+        overflow: visible;
+        margin-left: 24px;
+      }
+    }
+
+    &::-webkit-scrollbar {
+      height: 0 !important;
+      width: 0 !important;
+    }
+  }
+
+  &__body {
+    display: block;
+    font-size: 0;
+    white-space: nowrap;
+    transition: all 0.3s;
+    width: 100%;
+  }
+}

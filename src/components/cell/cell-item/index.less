@@ -1,0 +1,59 @@
+@import url('../../style/theme.less');
+.orc-cell_content {
+  display: flex;
+  align-items: center;
+  padding: 24px;
+  position: relative;
+  background-color: #fff;
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 24px;
+    width: calc(100% - 48px);
+    border-top: 1px solid @color-border-base;
+  }
+}
+
+.orc-cell--flexdwidth {
+  .orc-cell_label {
+    min-width: 144px;
+    flex: 0;
+  }
+  .orc-cell_value {
+    justify-content: flex-start;
+  }
+}
+.orc-cell_label {
+  position: relative;
+  flex: 1;
+  color: @color-text-base;
+  font-size: 30px;
+}
+
+.orc-cell_label.orc-cell--required {
+  padding-left: 20px;
+  &::after {
+    content: '*';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: @color-error;
+  }
+}
+
+.orc-cell_value {
+  position: relative;
+  display: flex;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+  color: #222;
+  .input-panel {
+    width: 100%;
+  }
+}
+
+.orc-cell_icon {
+  margin-left: 16px;
+}

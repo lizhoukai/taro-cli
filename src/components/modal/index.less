@@ -1,0 +1,61 @@
+@import url('../style/theme.less');
+
+@modal-width: 536px;
+
+.orc-modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  visibility: hidden;
+  transition: visibility 200ms ease-in;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__overlay,
+  &__container {
+    opacity: 0;
+    transition: opacity 200ms ease-in;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  &__container {
+    position: relative;
+    width: @modal-width;
+    overflow: hidden;
+    background-color: @color-white;
+    z-index: 2222;
+  }
+  // .btn-confirm {
+  //   color: #333851;
+  // }
+  // .btn-cancel {
+  //   color: #999999;
+  //   border-left: 1px solid #eee;
+  // }
+  .content-simple {
+    text-align: center;
+    font-size: 28px;
+  }
+}
+
+.orc-modal--active {
+  visibility: visible;
+
+  .orc-modal__overlay,
+  .orc-modal__container {
+    opacity: 1;
+  }
+}

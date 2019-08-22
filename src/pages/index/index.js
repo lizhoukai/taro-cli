@@ -5,7 +5,7 @@ import { observer, inject } from '@tarojs/mobx'
 import './index.less'
 
 
-@inject('counterStore')
+@inject('userStore')
 @observer
 class Index extends Component {
 
@@ -13,46 +13,21 @@ class Index extends Component {
     navigationBarTitleText: '首页'
   }
 
-  componentWillMount () { }
+  componentWillMount() { }
+  componentWillReact() { }
+  componentDidMount() { }
+  componentWillUnmount() { }
+  componentDidShow() { }
+  componentDidHide() { }
 
-  componentWillReact () {
-    console.log('componentWillReact')
-  }
-
-  componentDidMount () { }
-
-  componentWillUnmount () { }
-
-  componentDidShow () { }
-
-  componentDidHide () { }
-
-  increment = () => {
-    const { counterStore } = this.props
-    counterStore.increment()
-  }
-
-  decrement = () => {
-    const { counterStore } = this.props
-    counterStore.decrement()
-  }
-
-  incrementAsync = () => {
-    const { counterStore } = this.props
-    counterStore.incrementAsync()
-  }
-
-  render () {
-    const { counterStore: { counter } } = this.props
+  render() {
+    const { userStore } = this.props
     return (
       <View className='index'>
-        <Button onClick={this.increment}>+</Button>
-        <Button onClick={this.decrement}>-</Button>
-        <Button onClick={this.incrementAsync}>Add Async</Button>
-        <Text>{counter}</Text>
+        <Button>Add Async</Button>
       </View>
     )
   }
 }
 
-export default Index 
+export default Index

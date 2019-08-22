@@ -1,3 +1,11 @@
+/*
+ * @Author: 余树
+ * @Date: 2019-08-22 10:36:40
+ * @Last Modified by: 余树
+ * @Last Modified time: 2019-08-22 10:42:40
+ * 请求拦截器
+ */
+
 import Taro from '@tarojs/taro'
 
 // 请求库适配
@@ -33,9 +41,10 @@ const CODE_MESSAGE = {
  * 请求拦截
  */
 http.interceptors.request.use(config => {
-  if (Taro.getStorageSync('token')) {
+  const USER_INFO = Taro.getStorageSync('userInfo')
+  if (USER_INFO) {
     config.headers = {
-      Authorization: `Token ${Taro.getStorageSync('token')}`
+      Authorization: `Token ${USER_INFO.token}`
     }
   }
   Taro.showLoading({ title: '正在加载...' })
@@ -48,17 +57,18 @@ http.interceptors.request.use(config => {
 http.interceptors.response.use(
   res => {
     Taro.hideLoading()
-    if (res && res.data && res.data.code !== 0) {
+    const { data } = res
+    if (data && data.code !== 0) {
       Taro.showToast({
-        title: res.data.msg,
+        title: data.msg,
         icon: 'none'
       })
-      if (res.data.code === 401) {
+      if (data.code === 401) {
         Taro.clearStorage()
         Taro.redirectTo({ url: '../pages/login/login' })
       }
     }
-    return res.data
+    return data
   },
   error => {
     if (error && error.response) {

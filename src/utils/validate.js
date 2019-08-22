@@ -62,7 +62,7 @@ function checkRule(value, rule) {
         }
         break
       case 'zipCode':
-        if (!/^[1-9]\d{5}(?!\d)$/.test(value)) {
+        if (!/^[0-9]{6}$/.test(value)) {
           Taro.showToast({ title: `请输入正确的${rule.message}`, icon: 'none', duration: 2000 })
           return false
         }

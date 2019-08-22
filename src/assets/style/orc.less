@@ -1,6 +1,6 @@
 @import url('./comm.less');
 @import url('./font.less');
-@import url('./cell.less');
+
 page {
   font-size: 30px;
   height: 100%;
@@ -12,22 +12,17 @@ page {
   }
 }
 view,
-scroll-view {
+scroll-view,
+movable-area,
+movable-view{
   box-sizing: border-box;
   word-break: break-all;
 }
-image {
-  // vertical-align: top;
-}
-
-swiper{
-  height: 320px;
-}
-
 radio,
 checkbox {
   transform: scale(0.8);
 }
+
 input {
   width: 100%;
 }
@@ -37,3 +32,14 @@ input {
   height: 0;
   color: transparent;
 }
+
+image{
+  vertical-align: top;
+}
+
+button[disabled] {
+  color: #fff !important;
+  background: #cccccc !important;
+  border-color: #cccccc !important;
+}
+

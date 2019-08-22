@@ -1,13 +1,16 @@
 import Taro, { Component } from '@tarojs/taro'
 import { Provider } from '@tarojs/mobx'
 import '@tarojs/async-await'
+import dayjs from 'dayjs'
 import Index from './pages/index'
 
 import http from './utils/httpRequest'
+import navigator from './utils/navigator'
 import { va } from './utils/validate'
+import { fomatFloat } from './utils/index'
 import './assets/style/orc.less'
 
-import counterStore from './store/counter'
+import userStore from './store/userStore'
 
 import './app.less'
 
@@ -20,11 +23,14 @@ import './app.less'
 // 注册全局变量
 Object.assign(Taro.Component.prototype, {
   $http: http,
-  $va: va
+  $va: va,
+  $day: dayjs,
+  $navigateTo: navigator,
+  $fomatFloat: fomatFloat
 })
 
 const store = {
-  counterStore
+  userStore
 }
 
 class App extends Component {
@@ -38,13 +44,24 @@ class App extends Component {
     }
   }
 
-  componentDidMount() {}
+  componentDidMount() {
+    // 底部适配ipx
+    Taro.getSystemInfo({
+      success: function (res) {
+        if (res.model.indexOf('iPhone X') > -1) {
+          userStore.handlePhoneModel('iPhone X')
+        } else {
+          userStore.handlePhoneModel(res.model)
+        }
+      }
+    })
+  }
 
-  componentDidShow() {}
+  componentDidShow() { }
 
-  componentDidHide() {}
+  componentDidHide() { }
 
-  componentDidCatchError() {}
+  componentDidCatchError() { }
 
   // 在 App 类中的 render() 函数没有实际作用
   // 请勿修改此函数

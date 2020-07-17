@@ -43,7 +43,7 @@
     "classnames": "^2.2.6",
     "dayjs": "^1.8.15",
     "flyio": "^0.6.14",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.19",
     "mobx": "4.8.0",
     "nerv-devtools": "^1.4.4",
     "nervjs": "^1.4.4"
